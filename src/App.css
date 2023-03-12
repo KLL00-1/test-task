@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  margin: 50px auto 20px;
   display: flex;
   flex-direction: column;
+  width: max-content;
+  gap: 10px;
+}
+.paginator {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.header-block {
+  display: flex;
+  gap: 100px;
+  background-color: #161b22;
+  width: 985px;
+  padding: 20px 15px;
+}
+.header-block h2 {
+  color: #b3b3b3;
+  font-size: 16px;
+}
+.repo-style {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding: 0 0 5px 0;
+}
+.repo-style h2,
+.repo-style h3,
+.repo-style a {
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 15px;
+  overflow: hidden;
+}
+.repo-style h2 {
+  width: 125px;
+}
+.repo-style div {
+  width: 190px;
+  padding: 0 0 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.repo-style h3 {
+  width: 220px;
+}
+.repo-style a {
+  width: 250px;
+}
+.more {
+  margin-left: 20px;
+  padding-left: 0 !important;
+  width: 100px !important;
+  height: 33px;
+  background-color: #238636;
+  border-radius: 6px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.current-repo {
+  border: 1px solid #b3b3b3;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current-repo-header {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  justify-content: space-between;
+  background-color: #161b22;
+  padding: 10px 15px;
+}
+.current-repo-header section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.current-repo-header div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.current-repo-header img {
+  max-width: 100px;
+  border-radius: 50px;
+}
+.current-repo-header h3 {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+.description {
+  margin-top: 10px;
+  padding: 0 15px;
+}
+.languages {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0 15px;
 }
