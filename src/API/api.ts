@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 instance.interceptors.request.use((config: any) => {
   config.headers.Authorization =
-    "Bearer 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";
+    "Bearer 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";
   return config;
 });
 
