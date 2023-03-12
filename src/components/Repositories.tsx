@@ -51,7 +51,7 @@ const Repositories: React.FC<RepositoriesType> = ({ focus }) => {
         });
       });
     }
-  }, []);
+  }, [window.localStorage.token]);
 
   let pushRepo = (count: number) => {
     if (count === 1) {

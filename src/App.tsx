@@ -13,11 +13,38 @@ import CurrentRepo from "./components/currentRepo";
 
 function App() {
   const [focus, setFocus] = useState(false);
+  const [value, setValue] = useState("");
+  const typeValue = (e: { currentTarget: { value: string } }) => {
+    setValue(e.currentTarget.value);
+  };
+
+  const connect = () => {
+    window.localStorage.setItem("token", value);
+  };
 
   return (
     <>
       <div className="container">
         <h1>Лев Кочетков</h1>
+        {!window.localStorage.token && (
+          <div>
+            <input
+              type="text"
+              placeholder="token"
+              onChange={typeValue}
+              value={value}
+            />
+            <button
+              onClick={() => {
+                connect();
+                window.location.reload();
+              }}
+            >
+              connect
+            </button>
+          </div>
+        )}
+
         <HashRouter>
           <Routes>
             <Route
@@ -25,7 +52,9 @@ function App() {
               element={
                 <>
                   <Search setFocus={setFocus} />
-                  {!window.localStorage.search&&<Repositories focus={focus} />}
+                  {!window.localStorage.search && (
+                    <Repositories focus={focus} />
+                  )}
                 </>
               }
             />

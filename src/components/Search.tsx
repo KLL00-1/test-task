@@ -22,7 +22,8 @@ const Search: React.FC<SearchType> = ({ setFocus }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const arr: any = [];
+    if(window.localStorage.search){
+      const arr: any = [];
     let count = Number(window.location.hash.slice(2, 4));
     setPreload(true);
     githubApi.searchRepo(searchRepo(window.localStorage.search)).then((r) => {
@@ -37,6 +38,8 @@ const Search: React.FC<SearchType> = ({ setFocus }) => {
       );
       setPreload(false);
     });
+    }
+    
   }, [search, currentPage]);
 
   const typeValue = (e: { currentTarget: { value: string } }) => {

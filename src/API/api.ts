@@ -4,8 +4,7 @@ const instance = axios.create({
   baseURL: "https://api.github.com/graphql",
 });
 instance.interceptors.request.use((config: any) => {
-  config.headers.Authorization =
-    "Bearer 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";
+  config.headers.Authorization = `Bearer ${window.localStorage.token} `;
   return config;
 });
 
